@@ -5,7 +5,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: 'Nunito, sans-serif',
+        sans: 'Nunito, Marcellus, sans-serif',
+        display: 'Marcellus',
+      },
+      backgroundImage: {
+        'hero-bg': 'url(./img/banner-4.png)',
       },
     },
     fontWeight: {
