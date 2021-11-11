@@ -12,9 +12,9 @@ const Navbar = ({ toggle, isOpen }) => {
         role="navigation"
       >
         <Link to="/home">
-          <img src={logo} alt="Logo" className="w-2/4 md:h-3/4 p-1" />
+          <img src={logo} alt="Logo" className="w-2/4 md:w-3/4 p-1" />
         </Link>
-        <div onClick={toggle} className="px-4 cursor-pointer md:hidden">
+        <div onClick={toggle} className="cursor-pointer md:hidden">
           {isOpen ? (
             <svg
               className="w-6 h-6"
@@ -65,6 +65,9 @@ const Navbar = ({ toggle, isOpen }) => {
           </Link>
           {user?.email ? (
             <>
+              <Link className="desktop-link" to="/dashboard">
+                Dashboard
+              </Link>
               <span className="text-green-700 font-display mx-1">
                 {user?.displayName}
               </span>

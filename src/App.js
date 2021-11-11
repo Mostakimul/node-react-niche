@@ -4,6 +4,7 @@ import './App.css';
 import AuthProvider from './context/AuthProvider';
 import About from './pages/About/About/About';
 import Contact from './pages/Contact/Contact/Contact';
+import Dashboard from './pages/Dashboard/Dashboard';
 import Error from './pages/Error/Error';
 import FaqPage from './pages/FaqPage/FaqPage/FaqPage';
 import Home from './pages/Home/Home/Home';
@@ -61,6 +62,9 @@ function App() {
           </Route>
           <Route path="/register">
             <Register />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
           </Route>
           <Route exact path="/">
             <Home />

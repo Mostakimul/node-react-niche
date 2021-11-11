@@ -7,14 +7,12 @@ const DropDown = ({ isOpen, toggle }) => {
 
   return (
     <div
-      className={
-        isOpen
-          ? 'grid grid-cols-1 mx-4 rounded shadow sm:w-2/3 sm:mx-auto transition duration-500 ease-in text-center items-center bg-red-200'
-          : 'hidden'
-      }
+      className={`bg-blue-50 w-2/4 md:w-1/6 space-y-4 pt-8 absolute inset-y-0 left-0 transform md:relative md:hidden transition duration-200 ease-in md:-translate-x-full overflow-y-scroll ${
+        isOpen ? '-translate-x-0' : '-translate-x-full'
+      }`}
       onClick={toggle}
     >
-      <Link className="nav-link rounded-t" to="/home">
+      <Link className="nav-link" to="/home">
         Home
       </Link>
       <Link className="nav-link" to="/about">
@@ -26,19 +24,18 @@ const DropDown = ({ isOpen, toggle }) => {
       <Link className="nav-link" to="/contact">
         Contact
       </Link>
-      <Link className="nav-link rounded-b" to="/faq">
+      <Link className="nav-link" to="/faq">
         FAQ
       </Link>
       {user?.email ? (
         <>
-          <span className="text-green-700 font-display mx-1">
+          <Link className="nav-link" to="/dashboard">
+            Dashboard
+          </Link>
+          <span className="text-green-700 block font-display mx-1">
             {user?.displayName}
           </span>
-          <button
-            onClick={logOut}
-            className="nav-link rounded-b"
-            to="/register"
-          >
+          <button onClick={logOut} className="nav-link" to="/register">
             Logout
           </button>
         </>
