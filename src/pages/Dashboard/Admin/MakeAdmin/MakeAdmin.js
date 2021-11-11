@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import useAuth from '../../../../hooks/useAuth';
 import DashboardTopNav from '../../../Shared/DashboardTopNav/DashboardTopNav';
 import LoaderSpin from '../../../Shared/LoaderSpin/LoaderSpin';
 import SuccessAlert from '../../../Shared/SuccessAlert/SuccessAlert';
@@ -15,6 +16,7 @@ const MakeAdmin = () => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const { token } = useAuth();
 
   const closeSuccess = () => {
     setIsSuccess(false);
@@ -23,7 +25,11 @@ const MakeAdmin = () => {
   const onSubmit = (data) => {
     setIsLoading(true);
     axios
-      .put('http://localhost:5000/addAdmin', data)
+      .put('http://localhost:5000/addAdmin', data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
       .then((res) => {
         if (res.data.acknowledged) {
           setIsLoading(false);
@@ -33,7 +39,7 @@ const MakeAdmin = () => {
       })
       .catch((err) => {
         console.log(err);
-        // setIsLoading(false);
+        setIsLoading(false);
       });
   };
   return (

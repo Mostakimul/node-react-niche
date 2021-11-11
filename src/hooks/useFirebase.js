@@ -2,6 +2,7 @@ import axios from 'axios';
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  getIdToken,
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -19,6 +20,7 @@ const useFirebase = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [authError, setAuthError] = useState('');
   const [admin, setAdmin] = useState(false);
+  const [token, setToken] = useState('');
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
 
@@ -128,6 +130,13 @@ const useFirebase = () => {
     const unsub = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
+        getIdToken(user)
+          .then((idToken) => {
+            setToken(idToken);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       } else {
         setUser({});
       }
@@ -154,6 +163,7 @@ const useFirebase = () => {
   return {
     user,
     admin,
+    token,
     isLoading,
     authError,
     registerUser,
