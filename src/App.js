@@ -9,6 +9,7 @@ import FaqPage from './pages/FaqPage/FaqPage/FaqPage';
 import Home from './pages/Home/Home/Home';
 import Login from './pages/Login/Login';
 import Pricing from './pages/Pricing/Pricing/Pricing';
+import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import Register from './pages/Register/Register';
 import DropDown from './pages/Shared/Navbar/DropDown';
 import Navbar from './pages/Shared/Navbar/Navbar';
@@ -46,9 +47,9 @@ function App() {
           <Route exact path="/contact">
             <Contact />
           </Route>
-          <Route exact path="/faq">
+          <PrivateRoute exact path="/faq">
             <FaqPage />
-          </Route>
+          </PrivateRoute>
           <Route exact path="/about">
             <About />
           </Route>

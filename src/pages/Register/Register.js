@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Loader from 'react-loader-spinner';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import facebook from '../../img/facebook.png';
 import github from '../../img/github.png';
@@ -16,9 +16,11 @@ const Register = () => {
     reset,
     formState: { errors },
   } = useForm();
+  const history = useHistory();
+  const location = useLocation();
 
   const onSubmit = (data) => {
-    registerUser(data.email, data.password);
+    registerUser(data.email, data.password, history, location);
     reset({});
   };
 
@@ -28,13 +30,15 @@ const Register = () => {
       <div className="container py-5 md:w-3/6">
         {/* loader */}
         {isLoading && (
-          <Loader
-            type="Puff"
-            color="#00BFFF"
-            height={100}
-            width={100}
-            timeout={3000}
-          />
+          <div className="flex justify-center">
+            <Loader
+              type="Puff"
+              color="#19752f"
+              height={100}
+              width={100}
+              timeout={3000}
+            />
+          </div>
         )}
         {/* success */}
         {user?.email && (
