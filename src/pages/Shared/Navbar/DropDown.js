@@ -30,9 +30,18 @@ const DropDown = ({ isOpen, toggle }) => {
         FAQ
       </Link>
       {user?.email ? (
-        <button onClick={logOut} className="nav-link rounded-b" to="/register">
-          Logout
-        </button>
+        <>
+          <span className="text-green-700 font-display mx-1">
+            {user?.displayName}
+          </span>
+          <button
+            onClick={logOut}
+            className="nav-link rounded-b"
+            to="/register"
+          >
+            Logout
+          </button>
+        </>
       ) : (
         <>
           <Link className="nav-link rounded-b" to="/login">

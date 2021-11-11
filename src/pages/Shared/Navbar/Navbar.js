@@ -64,9 +64,14 @@ const Navbar = ({ toggle, isOpen }) => {
             FAQ
           </Link>
           {user?.email ? (
-            <button onClick={logOut} className="desktop-link" to="/register">
-              Logout
-            </button>
+            <>
+              <span className="text-green-700 font-display mx-1">
+                {user?.displayName}
+              </span>
+              <button onClick={logOut} className="desktop-link" to="/register">
+                Logout
+              </button>
+            </>
           ) : (
             <>
               <Link className="desktop-link" to="/login">

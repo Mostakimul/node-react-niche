@@ -21,7 +21,7 @@ const Register = () => {
   const location = useLocation();
 
   const onSubmit = (data) => {
-    registerUser(data.email, data.password, history, location);
+    registerUser(data.email, data.password, data.name, history, location);
     reset({});
   };
 

@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from 'firebase/auth';
 import { useEffect, useState } from 'react';
 import initializeAuthentication from '../firebase/firebase.int';
@@ -20,13 +21,27 @@ const useFirebase = () => {
   const googleProvider = new GoogleAuthProvider();
 
   // register user
-  const registerUser = (email, password, history, location) => {
+  const registerUser = (email, password, name, history, location) => {
     setIsLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+        setAuthError('');
+        const newUser = { email, displayName: name };
+        setUser(newUser);
+        // update displayname
+        updateProfile(auth.currentUser, {
+          displayName: name,
+        })
+          .then(() => {
+            // Profile updated!
+            // ...
+          })
+          .catch((error) => {
+            // An error occurred
+            // ...
+          });
         const destinantion = location?.state?.from || '/';
         history.replace(destinantion);
-        setAuthError('');
       })
       .catch((error) => {
         setAuthError(error.message);
