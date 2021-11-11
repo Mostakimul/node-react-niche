@@ -14,6 +14,7 @@ module.exports = {
     },
     fontWeight: {
       semibold: 600,
+      bold: 700,
     },
     container: {
       center: true,
