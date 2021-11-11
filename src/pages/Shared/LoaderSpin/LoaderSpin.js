@@ -1,6 +1,7 @@
 import React from 'react';
+import Loader from 'react-loader-spinner';
 
-const Loader = () => {
+const LoaderSpin = () => {
   return (
     <div className="flex justify-center">
       <Loader
@@ -14,4 +15,4 @@ const Loader = () => {
   );
 };
 
-export default Loader;
+export default LoaderSpin;
