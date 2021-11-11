@@ -6,6 +6,7 @@ import useAuth from '../../hooks/useAuth';
 import facebook from '../../img/facebook.png';
 import github from '../../img/github.png';
 import google from '../../img/google.png';
+import MainNavbar from '../Shared/Navbar/MainNavbar';
 import PageTitle from '../Shared/PageTitle/PageTitle';
 
 const Register = () => {
@@ -31,6 +32,7 @@ const Register = () => {
 
   return (
     <div>
+      <MainNavbar />
       <PageTitle title="Register" />
       <div className="container py-5 md:w-3/6">
         {/* loader */}

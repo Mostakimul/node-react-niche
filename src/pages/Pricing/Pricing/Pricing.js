@@ -1,14 +1,13 @@
 import React from 'react';
 import MainNavbar from '../../Shared/Navbar/MainNavbar';
-import Banner from '../Banner/Banner';
 
-const Home = () => {
+const Pricing = () => {
   return (
     <div>
       <MainNavbar />
-      <Banner />
+      <h2>Pricing Page</h2>
     </div>
   );
 };
 
-export default Home;
+export default Pricing;

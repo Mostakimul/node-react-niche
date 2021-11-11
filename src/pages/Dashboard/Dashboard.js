@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
 import logo from '../../img/logo.png';
+import AddProduct from './Admin/AddProduct/AddProduct';
+import MakeAdmin from './Admin/MakeAdmin/MakeAdmin';
+import ManageOrder from './Admin/ManageOrder/ManageOrder';
+import ManageProduct from './Admin/ManageProduct/ManageProduct';
+import DashboardHome from './DashboardHome/DashboardHome';
+
 const Dashboard = () => {
   const [isdashOpen, setIsDashOpen] = useState(true);
   const showSideBar = () => {
     setIsDashOpen(!isdashOpen);
   };
+  let { path, url } = useRouteMatch();
 
   return (
     <div className="relative min-h-screen md:flex">
@@ -68,27 +75,45 @@ const Dashboard = () => {
           </Link>
         </div>
         <nav onClick={showSideBar}>
-          <Link to="/" className="dash-icon">
-            My Orders
+          <Link to={`${url}`} className="dash-icon">
+            Dashboard
           </Link>
-          <Link to="/" className="dash-icon">
-            Review
+          <Link to={`${url}/make-admin`} className="dash-icon">
+            Make Admin
           </Link>
-          <Link to="/" className="dash-icon">
-            Pay Now
+          <Link to={`${url}/add-product`} className="dash-icon">
+            Add Product
           </Link>
-          <Link to="/" className="dash-icon">
+          <Link to={`${url}/manage-orders`} className="dash-icon">
+            Manage All Orders
+          </Link>
+          <Link to={`${url}/manage-product`} className="dash-icon">
+            Manage Product
+          </Link>
+          <Link to="/" className="dash-icon md:hidden">
             Logout
           </Link>
         </nav>
       </div>
 
-      {/* Content */}
-      <div className="flex-1">
-        <div className="bg-gray-100 m-4 p-2 rounded shadow">
-          <h3>Content</h3>
-        </div>
-      </div>
+      {/* Nested Routes */}
+      <Switch>
+        <Route exact path={path}>
+          <DashboardHome />
+        </Route>
+        <Route path={`${path}/make-admin`}>
+          <MakeAdmin />
+        </Route>
+        <Route path={`${path}/add-product`}>
+          <AddProduct />
+        </Route>
+        <Route path={`${path}/manage-orders`}>
+          <ManageOrder />
+        </Route>
+        <Route path={`${path}/manage-product`}>
+          <ManageProduct />
+        </Route>
+      </Switch>
     </div>
   );
 };

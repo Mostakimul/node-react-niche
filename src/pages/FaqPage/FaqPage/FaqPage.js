@@ -1,14 +1,13 @@
 import React from 'react';
 import MainNavbar from '../../Shared/Navbar/MainNavbar';
-import Banner from '../Banner/Banner';
 
-const Home = () => {
+const FaqPage = () => {
   return (
     <div>
       <MainNavbar />
-      <Banner />
+      <h2>Faq Page </h2>
     </div>
   );
 };
 
-export default Home;
+export default FaqPage;
