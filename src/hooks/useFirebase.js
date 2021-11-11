@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {
   createUserWithEmailAndPassword,
   getAuth,
@@ -28,18 +29,14 @@ const useFirebase = () => {
         setAuthError('');
         const newUser = { email, displayName: name };
         setUser(newUser);
+        // save user to database
+        saveToMongo(email, name);
         // update displayname
         updateProfile(auth.currentUser, {
           displayName: name,
         })
-          .then(() => {
-            // Profile updated!
-            // ...
-          })
-          .catch((error) => {
-            // An error occurred
-            // ...
-          });
+          .then(() => {})
+          .catch((error) => {});
         const destinantion = location?.state?.from || '/';
         history.replace(destinantion);
       })
@@ -73,6 +70,9 @@ const useFirebase = () => {
     setIsLoading(true);
     signInWithPopup(auth, googleProvider)
       .then((result) => {
+        const user = result.user;
+        // save user to mongo
+        saveToMongoGoogle(user.email, user.displayName);
         const destinantion = location?.state?.from || '/';
         history.replace(destinantion);
         setAuthError('');
@@ -82,6 +82,31 @@ const useFirebase = () => {
       })
       .finally(() => {
         setIsLoading(false);
+      });
+  };
+
+  // saveToMongo
+  const saveToMongo = (email, displayName) => {
+    const mongoUser = { email, displayName };
+    axios
+      .post('http://localhost:5000/users', mongoUser)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  // saveToMongo ifor google
+  const saveToMongoGoogle = (email, displayName) => {
+    const mongoUser = { email, displayName };
+    axios
+      .put('http://localhost:5000/users', mongoUser)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 
