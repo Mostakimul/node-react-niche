@@ -18,6 +18,7 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [authError, setAuthError] = useState('');
+  const [admin, setAdmin] = useState(false);
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
 
@@ -110,6 +111,18 @@ const useFirebase = () => {
       });
   };
 
+  // check admin or not
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/users/${user.email}`)
+      .then((res) => {
+        setAdmin(res.data.admin);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [user?.email]);
+
   // observer for user
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (user) => {
@@ -140,6 +153,7 @@ const useFirebase = () => {
   };
   return {
     user,
+    admin,
     isLoading,
     authError,
     registerUser,

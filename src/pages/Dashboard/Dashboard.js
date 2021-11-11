@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import logo from '../../img/logo.png';
 import AddProduct from './Admin/AddProduct/AddProduct';
 import MakeAdmin from './Admin/MakeAdmin/MakeAdmin';
@@ -13,6 +14,7 @@ const Dashboard = () => {
     setIsDashOpen(!isdashOpen);
   };
   let { path, url } = useRouteMatch();
+  const { admin, logOut } = useAuth();
 
   return (
     <div className="relative min-h-screen md:flex">
@@ -78,21 +80,32 @@ const Dashboard = () => {
           <Link to={`${url}`} className="dash-icon">
             Dashboard
           </Link>
-          <Link to={`${url}/make-admin`} className="dash-icon">
-            Make Admin
-          </Link>
-          <Link to={`${url}/add-product`} className="dash-icon">
-            Add Product
-          </Link>
-          <Link to={`${url}/manage-orders`} className="dash-icon">
-            Manage All Orders
-          </Link>
-          <Link to={`${url}/manage-product`} className="dash-icon">
-            Manage Product
-          </Link>
-          <Link to="/" className="dash-icon md:hidden">
+          {admin ? (
+            <>
+              <Link to={`${url}/make-admin`} className="dash-icon">
+                Make Admin
+              </Link>
+              <Link to={`${url}/add-product`} className="dash-icon">
+                Add Product
+              </Link>
+              <Link to={`${url}/manage-orders`} className="dash-icon">
+                Manage All Orders
+              </Link>
+              <Link to={`${url}/manage-product`} className="dash-icon">
+                Manage Product
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link to={`${url}/my-orders`} className="dash-icon">
+                My Orders
+              </Link>
+            </>
+          )}
+
+          <button onClick={logOut} className="dash-icon md:hidden">
             Logout
-          </Link>
+          </button>
         </nav>
       </div>
 
