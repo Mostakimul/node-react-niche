@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const DropDown = ({ isOpen, toggle }) => {
+  const { user, logOut } = useAuth();
+
   return (
     <div
       className={
@@ -26,12 +29,20 @@ const DropDown = ({ isOpen, toggle }) => {
       <Link className="nav-link rounded-b" to="/faq">
         FAQ
       </Link>
-      <Link className="nav-link rounded-b" to="/login">
-        Login
-      </Link>
-      <Link className="nav-link rounded-b" to="/register">
-        Register
-      </Link>
+      {user?.email ? (
+        <button onClick={logOut} className="nav-link rounded-b" to="/register">
+          Logout
+        </button>
+      ) : (
+        <>
+          <Link className="nav-link rounded-b" to="/login">
+            Login
+          </Link>
+          <Link className="nav-link rounded-b" to="/register">
+            Register
+          </Link>
+        </>
+      )}
     </div>
   );
 };

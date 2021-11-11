@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import logo from '../../../img/logo.png';
 
 const Navbar = ({ toggle, isOpen }) => {
+  const { user, logOut } = useAuth();
   return (
     <nav className="container">
       <div
@@ -61,12 +63,20 @@ const Navbar = ({ toggle, isOpen }) => {
           <Link className="desktop-link" to="/faq">
             FAQ
           </Link>
-          <Link className="desktop-link" to="/login">
-            Login
-          </Link>
-          <Link className="desktop-link" to="/register">
-            Register
-          </Link>
+          {user?.email ? (
+            <button onClick={logOut} className="desktop-link" to="/register">
+              Logout
+            </button>
+          ) : (
+            <>
+              <Link className="desktop-link" to="/login">
+                Login
+              </Link>
+              <Link className="desktop-link" to="/register">
+                Register
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </nav>
