@@ -9,7 +9,8 @@ import google from '../../img/google.png';
 import PageTitle from '../Shared/PageTitle/PageTitle';
 
 const Register = () => {
-  const { authError, user, registerUser, isLoading } = useAuth();
+  const { authError, user, registerUser, isLoading, loginWithGoogle } =
+    useAuth();
   const {
     register,
     handleSubmit,
@@ -22,6 +23,10 @@ const Register = () => {
   const onSubmit = (data) => {
     registerUser(data.email, data.password, history, location);
     reset({});
+  };
+
+  const googleLogin = () => {
+    loginWithGoogle(history, location);
   };
 
   return (
@@ -137,9 +142,9 @@ const Register = () => {
             </h3>
             <div className="bg-white max-w-lg py-2.5 mx-auto rounded-md shadow-md">
               <div className="flex items-center justify-center">
-                <div className="icon-form">
+                <button onClick={googleLogin} className="icon-form">
                   <img src={google} alt="google" />
-                </div>
+                </button>
                 <div className="icon-form">
                   <img src={github} alt="github" />
                 </div>

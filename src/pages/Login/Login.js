@@ -9,7 +9,8 @@ import google from '../../img/google.png';
 import PageTitle from '../Shared/PageTitle/PageTitle';
 
 const Login = () => {
-  const { authError, user, loginUserWithEmail, isLoading } = useAuth();
+  const { authError, user, loginUserWithEmail, isLoading, loginWithGoogle } =
+    useAuth();
   const {
     register,
     handleSubmit,
@@ -19,6 +20,10 @@ const Login = () => {
   const location = useLocation();
   const onSubmit = (data) => {
     loginUserWithEmail(data.email, data.password, history, location);
+  };
+
+  const googleLogin = () => {
+    loginWithGoogle(history, location);
   };
 
   return (
@@ -115,9 +120,9 @@ const Login = () => {
             </h3>
             <div className="bg-white max-w-lg py-2.5 mx-auto rounded-md shadow-md">
               <div className="flex items-center justify-center">
-                <div className="icon-form">
+                <button onClick={googleLogin} className="icon-form">
                   <img src={google} alt="google" />
-                </div>
+                </button>
                 <div className="icon-form">
                   <img src={github} alt="github" />
                 </div>
