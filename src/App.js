@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import AuthProvider from './context/AuthProvider';
 import About from './pages/About/About/About';
 import Contact from './pages/Contact/Contact/Contact';
 import Error from './pages/Error/Error';
@@ -32,41 +33,43 @@ function App() {
   }, [isOpen]);
 
   return (
-    <Router>
-      <div className="bg-red-50">
-        <Navbar isOpen={isOpen} toggle={toggle} />
-        <DropDown isOpen={isOpen} toggle={toggle} />
-      </div>
-      <Switch>
-        <Route exact path="/pricing">
-          <Pricing />
-        </Route>
-        <Route exact path="/contact">
-          <Contact />
-        </Route>
-        <Route exact path="/faq">
-          <FaqPage />
-        </Route>
-        <Route exact path="/about">
-          <About />
-        </Route>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/register">
-          <Register />
-        </Route>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="*">
-          <Error />
-        </Route>
-      </Switch>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <div className="bg-red-50">
+          <Navbar isOpen={isOpen} toggle={toggle} />
+          <DropDown isOpen={isOpen} toggle={toggle} />
+        </div>
+        <Switch>
+          <Route exact path="/pricing">
+            <Pricing />
+          </Route>
+          <Route exact path="/contact">
+            <Contact />
+          </Route>
+          <Route exact path="/faq">
+            <FaqPage />
+          </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route exact path="/home">
+            <Home />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/register">
+            <Register />
+          </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="*">
+            <Error />
+          </Route>
+        </Switch>
+      </Router>
+    </AuthProvider>
   );
 }
 
