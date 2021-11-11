@@ -7,6 +7,10 @@ import MakeAdmin from './Admin/MakeAdmin/MakeAdmin';
 import ManageOrder from './Admin/ManageOrder/ManageOrder';
 import ManageProduct from './Admin/ManageProduct/ManageProduct';
 import DashboardHome from './DashboardHome/DashboardHome';
+import AdminRoute from '../AdminRoute/AdminRoute';
+import MyOrders from './Client/MyOrders/MyOrders';
+import AddReview from './Client/AddReview/AddReview';
+import PayNow from './Client/PayNow/PayNow';
 
 const Dashboard = () => {
   const [isdashOpen, setIsDashOpen] = useState(true);
@@ -100,6 +104,12 @@ const Dashboard = () => {
               <Link to={`${url}/my-orders`} className="dash-icon">
                 My Orders
               </Link>
+              <Link to={`${url}/add-review`} className="dash-icon">
+                Add Review
+              </Link>
+              <Link to={`${url}/pay`} className="dash-icon">
+                Pay Now
+              </Link>
             </>
           )}
 
@@ -114,17 +124,26 @@ const Dashboard = () => {
         <Route exact path={path}>
           <DashboardHome />
         </Route>
-        <Route path={`${path}/make-admin`}>
+        <AdminRoute path={`${path}/make-admin`}>
           <MakeAdmin />
-        </Route>
-        <Route path={`${path}/add-product`}>
+        </AdminRoute>
+        <AdminRoute path={`${path}/add-product`}>
           <AddProduct />
-        </Route>
-        <Route path={`${path}/manage-orders`}>
+        </AdminRoute>
+        <AdminRoute path={`${path}/manage-orders`}>
           <ManageOrder />
-        </Route>
-        <Route path={`${path}/manage-product`}>
+        </AdminRoute>
+        <AdminRoute path={`${path}/manage-product`}>
           <ManageProduct />
+        </AdminRoute>
+        <Route path={`${path}/my-orders`}>
+          <MyOrders />
+        </Route>
+        <Route path={`${path}/add-review`}>
+          <AddReview />
+        </Route>
+        <Route path={`${path}/pay`}>
+          <PayNow />
         </Route>
       </Switch>
     </div>
