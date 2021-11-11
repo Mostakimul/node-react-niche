@@ -6,7 +6,9 @@ import Contact from './pages/Contact/Contact/Contact';
 import Error from './pages/Error/Error';
 import FaqPage from './pages/FaqPage/FaqPage/FaqPage';
 import Home from './pages/Home/Home/Home';
+import Login from './pages/Login/Login';
 import Pricing from './pages/Pricing/Pricing/Pricing';
+import Register from './pages/Register/Register';
 import DropDown from './pages/Shared/Navbar/DropDown';
 import Navbar from './pages/Shared/Navbar/Navbar';
 
@@ -50,6 +52,12 @@ function App() {
         </Route>
         <Route exact path="/home">
           <Home />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/register">
+          <Register />
         </Route>
         <Route exact path="/">
           <Home />

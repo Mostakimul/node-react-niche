@@ -61,6 +61,12 @@ const Navbar = ({ toggle, isOpen }) => {
           <Link className="desktop-link" to="/faq">
             FAQ
           </Link>
+          <Link className="desktop-link" to="/login">
+            Login
+          </Link>
+          <Link className="desktop-link" to="/register">
+            Register
+          </Link>
         </div>
       </div>
     </nav>
