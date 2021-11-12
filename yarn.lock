@@ -2099,6 +2099,11 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
+"@trendyol-js/react-carousel@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@trendyol-js/react-carousel/-/react-carousel-2.0.0.tgz#ecc7dccace8414b301226c9ad80576aacca7448a"
+  integrity sha512-AS/2cYZp4bXErECV6c49CsFeWxxd6J7xsRqRPUL5j1BF2Ga0rcIZog7wDRQr6WYaUbVRa/8Z5BKtg7kTk0s0+w==
+
 "@types/anymatch@*":
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/@types/anymatch/-/anymatch-1.3.1.tgz#336badc1beecb9dacc38bea2cf32adf627a8421a"
