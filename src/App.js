@@ -11,6 +11,7 @@ import Login from './pages/Login/Login';
 import Pricing from './pages/Pricing/Pricing/Pricing';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import Register from './pages/Register/Register';
+import Shop from './pages/Shop/Shop';
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route exact path="/contact">
             <Contact />
+          </Route>
+          <Route exact path="/shop">
+            <Shop />
           </Route>
           <PrivateRoute exact path="/faq">
             <FaqPage />

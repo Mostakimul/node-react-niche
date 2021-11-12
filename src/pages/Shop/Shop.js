@@ -31,8 +31,8 @@ const Shop = () => {
       <MainNavBar />
       <PageTitle title="SHOP" />
       <div className="container">
+        {isLoading && <LoaderSpin />}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 py-10">
-          {isLoading && <LoaderSpin />}
           {products.map((product) => (
             <SingleProduct key={product._id} product={product} />
           ))}

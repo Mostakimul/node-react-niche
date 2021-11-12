@@ -51,6 +51,9 @@ const Navbar = ({ toggle, isOpen }) => {
           <Link className="desktop-link" to="/home">
             Home
           </Link>
+          <Link className="desktop-link" to="/shop">
+            Shop
+          </Link>
           <Link className="desktop-link" to="/about">
             About
           </Link>

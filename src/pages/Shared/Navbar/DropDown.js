@@ -15,6 +15,9 @@ const DropDown = ({ isOpen, toggle }) => {
       <Link className="nav-link" to="/home">
         Home
       </Link>
+      <Link className="nav-link" to="/shop">
+        Shop
+      </Link>
       <Link className="nav-link" to="/about">
         About
       </Link>
