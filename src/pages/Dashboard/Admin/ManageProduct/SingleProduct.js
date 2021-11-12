@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SingleProduct = ({ product, index }) => {
+const SingleProduct = ({ product, index, handleModal }) => {
   return (
     <tr>
       <td className="border border-green-600 p-2">{index + 1}</td>
@@ -14,7 +14,10 @@ const SingleProduct = ({ product, index }) => {
         <button className="py-1 px-2 mx-1 bg-blue-700 hover:bg-blue-600 text-sm text-gray-50 rounded shadow">
           Edit
         </button>
-        <button className="py-1 px-2 mx-1 bg-red-700 hover:bg-red-600 text-sm text-gray-50 rounded shadow">
+        <button
+          onClick={() => handleModal(product?._id)}
+          className="py-1 px-2 my-1 md:my-0 mx-1 bg-red-700 hover:bg-red-600 text-sm text-gray-50 rounded shadow"
+        >
           Delete
         </button>
       </td>
