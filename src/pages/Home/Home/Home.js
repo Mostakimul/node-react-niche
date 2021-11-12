@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
 import MainNavbar from '../../Shared/Navbar/MainNavbar';
 import Banner from '../Banner/Banner';
 import Products from '../Products/Products';
@@ -8,7 +9,10 @@ const Home = () => {
     <div>
       <MainNavbar />
       <Banner />
-      <Products />
+      <section className="mt-10">
+        <Products />
+      </section>
+      <Footer />
     </div>
   );
 };
