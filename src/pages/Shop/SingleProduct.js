@@ -3,7 +3,7 @@ import React from 'react';
 const SingleProduct = ({ product }) => {
   const { name, image, price, quantity } = product;
   return (
-    <div className="bg-red-50 m-5 md:m-10 rounded-sm shadow transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 ">
+    <div className="bg-red-50 md:m-10 rounded-sm shadow transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 ">
       <div>
         <img src={image} alt={name} className="w-3/4 mx-auto" />
       </div>

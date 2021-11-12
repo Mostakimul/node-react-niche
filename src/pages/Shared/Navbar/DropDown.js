@@ -7,7 +7,7 @@ const DropDown = ({ isOpen, toggle }) => {
 
   return (
     <div
-      className={`bg-blue-50 w-2/4 md:w-1/6 space-y-4 pt-8 absolute inset-y-0 left-0 transform md:relative md:hidden transition duration-200 ease-in md:-translate-x-full overflow-y-scroll ${
+      className={`bg-blue-50 w-2/4 md:w-1/6 space-y-4 pt-8 absolute inset-y-0 left-0 transform md:relative md:hidden transition duration-200 ease-in md:-translate-x-full overflow-y-scroll z-20 ${
         isOpen ? '-translate-x-0' : '-translate-x-full'
       }`}
       onClick={toggle}
