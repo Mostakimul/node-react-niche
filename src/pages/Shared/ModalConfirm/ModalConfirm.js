@@ -8,7 +8,7 @@ const ModalConfirm = ({ showModal, closeModal, deleteProduct, productId }) => {
       } bg-black bg-opacity-50 absolute inset-0  justify-center items-center`}
       id="overlay"
     >
-      <div className="bg-gray-200 max-w-sm py-2 px-3 rounded shadow-xl text-gray-800 mx-auto my-5">
+      <div className="bg-gray-200 max-w-sm py-2 fixed inset-x-1/4 px-3 rounded shadow-xl text-gray-800 mx-auto my-5">
         <div className="flex justify-between items-center">
           <h4 className="text-lg font-bold">Confirm Delete?</h4>
           <button onClick={() => closeModal()}>
