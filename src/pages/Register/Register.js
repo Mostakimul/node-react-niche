@@ -6,6 +6,7 @@ import useAuth from '../../hooks/useAuth';
 import facebook from '../../img/facebook.png';
 import github from '../../img/github.png';
 import google from '../../img/google.png';
+import Footer from '../Shared/Footer/Footer';
 import MainNavbar from '../Shared/Navbar/MainNavbar';
 import PageTitle from '../Shared/PageTitle/PageTitle';
 
@@ -158,6 +159,7 @@ const Register = () => {
           </>
         )}
       </div>
+      <Footer />
     </div>
   );
 };

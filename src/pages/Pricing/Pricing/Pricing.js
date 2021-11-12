@@ -1,11 +1,14 @@
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
 import MainNavbar from '../../Shared/Navbar/MainNavbar';
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 
 const Pricing = () => {
   return (
     <div>
       <MainNavbar />
-      <h2>Pricing Page</h2>
+      <PageTitle title="Pricing" />
+      <Footer />
     </div>
   );
 };

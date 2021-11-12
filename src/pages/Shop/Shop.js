@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import Footer from '../Shared/Footer/Footer';
 import LoaderSpin from '../Shared/LoaderSpin/LoaderSpin';
 import MainNavBar from '../Shared/Navbar/MainNavbar';
 import PageTitle from '../Shared/PageTitle/PageTitle';
@@ -38,6 +39,7 @@ const Shop = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

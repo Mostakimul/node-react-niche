@@ -1,11 +1,14 @@
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
 import MainNavbar from '../../Shared/Navbar/MainNavbar';
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 
 const About = () => {
   return (
     <div>
       <MainNavbar />
-      <h2>About Page</h2>
+      <PageTitle title="About Us" />
+      <Footer />
     </div>
   );
 };
