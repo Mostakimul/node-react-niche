@@ -8,9 +8,9 @@ const FaqPage = () => {
     <div>
       <MainNavbar />
       <PageTitle title="FAQ" />
-      <div className="container py-10">
+      <div className="container md:py-10">
         <div className="grid grid-cols-1 md:grid-cols-6 gap-5">
-          <div className="col-span-2 p-10">
+          <div className="col-span-2 md:p-10">
             <h3 className="font-display text-4xl py-5">
               Frequently Asked Questions
             </h3>
@@ -19,7 +19,7 @@ const FaqPage = () => {
               oils, and balsamic vinegar
             </p>
           </div>
-          <div className="p-10 col-span-4">
+          <div className="md:p-10 col-span-4">
             <div>
               <h3 className="font-display text-3xl py-5">
                 What does Extra Virgin mean?{' '}
