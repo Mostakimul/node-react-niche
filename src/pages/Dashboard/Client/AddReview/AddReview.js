@@ -91,7 +91,7 @@ const AddReview = () => {
             <input
               type="number"
               id="rating"
-              {...register('rating', { required: true, min: 0, max: 5 })}
+              {...register('rating', { required: true, min: 1, max: 5 })}
               required
               className="input-field"
             />

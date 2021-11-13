@@ -5,7 +5,7 @@ const SingleProduct = ({ product }) => {
   const { name, image, price, quantity } = product;
 
   return (
-    <div className="bg-red-50 md:m-10 rounded-sm shadow transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 ">
+    <div className="bg-red-50 md:m-5 rounded-sm shadow transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 ">
       <div>
         <img src={image} alt={name} className="w-3/4 mx-auto" />
       </div>
@@ -18,7 +18,7 @@ const SingleProduct = ({ product }) => {
       </div>
       <div className="m-2">
         <Link to={`/product/${product._id}`}>
-          <button className="font-display text-lg bg-green-500 hover:bggren block w-full rounded shadow">
+          <button className="font-display py-1.5 text-lg bg-green-500 hover:bggren block w-full rounded shadow">
             Buy Now
           </button>
         </Link>
