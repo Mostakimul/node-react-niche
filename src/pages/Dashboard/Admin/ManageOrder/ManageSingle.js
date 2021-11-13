@@ -27,7 +27,7 @@ const ManageSingle = ({ allOrder, index, handleModal, changeStatus }) => {
       <td className="border border-green-600 p-2">{product.name}</td>
       <td className="border border-green-600 p-2">{product.qty}</td>
       <td className="border border-green-600 p-2">
-        <img src={product.image} alt="product" className="w-10 mx-auto" />
+        <img src={product.thumbnail} alt="product" className="w-10 mx-auto" />
       </td>
       <td className="border border-green-600 p-2">$ {product.price}</td>
       <td className="border border-green-600 ">

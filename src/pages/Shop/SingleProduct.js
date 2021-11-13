@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SingleProduct = ({ product }) => {
-  const { name, image, price, quantity, description } = product;
+  const { name, thumbnail, price, quantity, description } = product;
 
   return (
     <div className="bg-red-50 md:m-5 rounded-sm shadow transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 ">
       <div>
-        <img src={image} alt={name} className="w-3/4 mx-auto" />
+        <img src={thumbnail} alt={name} className="w-3/4 mx-auto" />
       </div>
       <div className="text-center bg-gray-50 m-2 p-2 rounded shadow">
         <h2 className="font-display font-semibold text-xl">{name}</h2>

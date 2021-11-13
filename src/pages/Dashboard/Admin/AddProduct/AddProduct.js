@@ -157,6 +157,23 @@ const AddProduct = () => {
             <p className="text-red-700">
               {errors.image && <span>This field is required</span>}
             </p>
+            {/* Thumbnail url Link */}
+            <label
+              htmlFor="thumbnail"
+              className="block font-display font-medium text-gray-700"
+            >
+              Thumbnail URL
+            </label>
+            <input
+              type="url"
+              id="thumbnail"
+              {...register('thumbnail', { required: true })}
+              required
+              className="input-field"
+            />
+            <p className="text-red-700">
+              {errors.thumbnail && <span>This field is required</span>}
+            </p>
             <button className="btn-login">Add Product</button>
           </form>
         )}
