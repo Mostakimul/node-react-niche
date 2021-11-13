@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import logo from '../../img/logo.png';
+import AdminRoute from '../AdminRoute/AdminRoute';
 import AddProduct from './Admin/AddProduct/AddProduct';
 import MakeAdmin from './Admin/MakeAdmin/MakeAdmin';
 import ManageOrder from './Admin/ManageOrder/ManageOrder';
 import ManageProduct from './Admin/ManageProduct/ManageProduct';
-import DashboardHome from './DashboardHome/DashboardHome';
-import AdminRoute from '../AdminRoute/AdminRoute';
-import MyOrders from './Client/MyOrders/MyOrders';
 import AddReview from './Client/AddReview/AddReview';
+import MyOrders from './Client/MyOrders/MyOrders';
 import PayNow from './Client/PayNow/PayNow';
+import DashboardHome from './DashboardHome/DashboardHome';
 
 const Dashboard = () => {
   const [isdashOpen, setIsDashOpen] = useState(true);
@@ -18,7 +18,7 @@ const Dashboard = () => {
     setIsDashOpen(!isdashOpen);
   };
   let { path, url } = useRouteMatch();
-  const { admin, logOut } = useAuth();
+  const { user, admin, logOut } = useAuth();
 
   return (
     <div className="relative min-h-screen md:flex">
@@ -61,7 +61,7 @@ const Dashboard = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
+                  d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
             )}
@@ -112,7 +112,6 @@ const Dashboard = () => {
               </Link>
             </>
           )}
-
           <button onClick={logOut} className="dash-icon md:hidden">
             Logout
           </button>

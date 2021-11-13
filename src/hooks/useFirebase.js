@@ -94,7 +94,7 @@ const useFirebase = () => {
     axios
       .post('http://localhost:5000/users', mongoUser)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
       })
       .catch((err) => {
         console.log(err);

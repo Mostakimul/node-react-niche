@@ -34,14 +34,14 @@ const ManageSingle = ({ allOrder, index, handleModal, changeStatus }) => {
         <button
           className={`${
             product.status === 'pending' ? 'bg-red-400' : 'bg-blue-400'
-          } rounded py-1 px-2 p-2`}
+          }  py-1 px-2 p-2 mx-1 text-sm text-gray-50 rounded shadow`}
         >
           {product.status}
         </button>
         {product.status === 'pending' && (
           <button
             onClick={() => changeStatus(_id)}
-            className="rounded py-1 px-2 p-2 bg-green-400 m-1"
+            className="py-1 px-2 my-1 md:my-0 mx-1 bg-green-700 hover:bg-green-600 text-sm text-gray-50 rounded shadow"
           >
             Change Status
           </button>
@@ -52,7 +52,7 @@ const ManageSingle = ({ allOrder, index, handleModal, changeStatus }) => {
           onClick={() => handleModal(_id)}
           className="py-1 px-2 my-1 md:my-0 mx-1 bg-red-700 hover:bg-red-600 text-sm text-gray-50 rounded shadow"
         >
-          Delete order
+          Delete
         </button>
       </td>
     </tr>
