@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SingleProduct = ({ product }) => {
-  const { name, image, price, quantity } = product;
+  const { name, image, price, quantity, description } = product;
 
   return (
     <div className="bg-red-50 md:m-5 rounded-sm shadow transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 ">
@@ -15,6 +15,9 @@ const SingleProduct = ({ product }) => {
           <p className="font-display text-base">Price: ${price}</p>
           <p className="font-display text-base">Qty: {quantity}</p>
         </div>
+        <p className="text-left font-display text-base text-gray-600 py-1 px-2">
+          {description.slice(0, 95)}...
+        </p>
       </div>
       <div className="m-2">
         <Link to={`/product/${product._id}`}>

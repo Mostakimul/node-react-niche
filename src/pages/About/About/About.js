@@ -12,7 +12,7 @@ const About = () => {
     <div>
       <MainNavbar />
       <PageTitle title="About Us" />
-      <div className="container">
+      <div className="container py-10">
         <div className="font-display py-10">
           <h2 className="text-center font-semibold text-5xl">Meet Out Team</h2>
           <p className="text-center font-sans text-gray-600">
