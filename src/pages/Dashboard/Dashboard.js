@@ -18,7 +18,7 @@ const Dashboard = () => {
     setIsDashOpen(!isdashOpen);
   };
   let { path, url } = useRouteMatch();
-  const { user, admin, logOut } = useAuth();
+  const { admin, logOut } = useAuth();
 
   return (
     <div className="relative min-h-screen md:flex">

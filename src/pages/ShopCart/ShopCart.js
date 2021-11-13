@@ -108,7 +108,7 @@ const ShopCart = () => {
                   type="text"
                   id="name"
                   disabled
-                  value={product.name}
+                  value={product?.name}
                   className="input-field text-gray-500 cursor-not-allowed"
                 />
                 <div className="flex items-center justify-between">
@@ -124,7 +124,7 @@ const ShopCart = () => {
                       type="text"
                       id="price"
                       disabled
-                      value={product.price}
+                      value={product?.price}
                       className="input-field text-gray-500 cursor-not-allowed"
                     />
                   </div>
@@ -163,7 +163,7 @@ const ShopCart = () => {
                   type="text"
                   id="name"
                   disabled
-                  value={user.displayName}
+                  value={user?.displayName}
                   className="input-field text-gray-600 cursor-not-allowed"
                 />
                 {/* Your Email */}
@@ -177,7 +177,7 @@ const ShopCart = () => {
                   type="text"
                   id="name"
                   disabled
-                  value={user.email}
+                  value={user?.email}
                   className="input-field text-gray-600 cursor-not-allowed"
                 />
                 {/* Address */}

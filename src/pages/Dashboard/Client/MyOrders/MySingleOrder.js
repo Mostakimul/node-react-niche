@@ -23,19 +23,19 @@ const MySingleOrder = ({ index, order, handleModal }) => {
   return (
     <tr>
       <td className="border border-green-600 p-2">{index + 1}</td>
-      <td className="border border-green-600 p-2">{product.name}</td>
-      <td className="border border-green-600 p-2">{product.qty}</td>
+      <td className="border border-green-600 p-2">{product?.name}</td>
+      <td className="border border-green-600 p-2">{product?.qty}</td>
       <td className="border border-green-600 p-2">
-        <img src={product.image} alt="product" className="w-10 mx-auto" />
+        <img src={product?.image} alt="product" className="w-10 mx-auto" />
       </td>
-      <td className="border border-green-600 p-2">$ {product.price}</td>
+      <td className="border border-green-600 p-2">$ {product?.price}</td>
       <td className="border border-green-600 ">
         <span
           className={`${
-            product.status === 'pending' ? 'bg-red-400' : 'bg-blue-400'
+            product?.status === 'pending' ? 'bg-red-400' : 'bg-blue-400'
           } rounded py-1 px-2 p-2`}
         >
-          {product.status}
+          {product?.status}
         </span>
       </td>
       <td className="border border-green-600 p-2">
