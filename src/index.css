@@ -17,6 +17,9 @@
 .btn-login {
   @apply bg-green-800 hover:bg-green-900 font-display font-semibold transition delay-75 text-gray-100 py-2 px-2.5 w-full my-1.5 rounded-md shadow-md
 }
+.btn-contact {
+  @apply bg-green-800 hover:bg-green-900 font-display font-semibold transition delay-75 text-gray-100 py-2 text-xl px-2.5 my-1.5 rounded-md shadow-md
+}
 
 .icon-form {
   @apply cursor-pointer rounded-full shadow-xl bg-gray-200 p-1 mx-1
