@@ -15,7 +15,7 @@ const ProductDetails = () => {
   useEffect(() => {
     setIsLoading(false);
     axios
-      .post(`http://localhost:5000/products/${id}`)
+      .get(`http://localhost:5000/products/${id}`)
       .then((res) => {
         setProduct(res.data);
       })

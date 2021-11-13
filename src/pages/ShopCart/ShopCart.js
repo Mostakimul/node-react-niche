@@ -30,7 +30,7 @@ const ShopCart = () => {
   useEffect(() => {
     setIsLoading(false);
     axios
-      .post(`http://localhost:5000/products/${id}`)
+      .get(`http://localhost:5000/products/${id}`)
       .then((res) => {
         setProduct(res.data);
       })
@@ -52,6 +52,7 @@ const ShopCart = () => {
     data.email = user.email;
     data.productId = id;
     data.qty = 1;
+    data.status = 'pending';
 
     setIsLoading(true);
     axios
