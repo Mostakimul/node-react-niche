@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import Footer from '../Shared/Footer/Footer';
 import LoaderSpin from '../Shared/LoaderSpin/LoaderSpin';
 import MainNavBar from '../Shared/Navbar/MainNavbar';
@@ -53,9 +54,11 @@ const ProductDetails = () => {
                 Left: {product?.quantity} items
               </p>
 
-              <button className="bg-green-500 py-2 px-4 block mt-5 rounded font-semibold shadow">
-                Buy Now
-              </button>
+              <Link to={`/cart/${id}`}>
+                <button className="bg-green-500 py-2 px-4 block mt-5 rounded font-semibold shadow">
+                  Buy Now
+                </button>
+              </Link>
             </div>
           </div>
         )}

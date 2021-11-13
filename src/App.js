@@ -13,6 +13,7 @@ import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Register from './pages/Register/Register';
 import Shop from './pages/Shop/Shop';
+import ShopCart from './pages/ShopCart/ShopCart';
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
           <Route path="/product/:id">
             <ProductDetails />
           </Route>
+          <PrivateRoute path="/cart/:id">
+            <ShopCart />
+          </PrivateRoute>
           <Route exact path="/pricing">
             <Pricing />
           </Route>
