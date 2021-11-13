@@ -34,7 +34,7 @@ const ProductDetails = () => {
       <div className="container font-display pt-10">
         {isLoading && <LoaderSpin />}
         {!isLoading && (
-          <div className="grid grid-cols-2  gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2  gap-10">
             <div>
               <img
                 src={product?.image}

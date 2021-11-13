@@ -10,11 +10,11 @@ const Blog = () => {
         </div>
         <div className="space-y-2">
           <h2 className="font-display text-3xl text-center">Latest News</h2>
-          <h3 className="font-display text-5xl text-center">
+          <h3 className="font-display text-5xl text-center px-5">
             Why Buy Olive Oil Online?
           </h3>
           <p className="text-gray-600 mb-5 text-center">
-            Mauris imperdiet orci dapibus, commodo libero nec interdum tortorbi
+            You Can choose from different products and many more!
           </p>
           <button className="bg-red-300 block mx-auto text-center py-2 px-5 rounded shadow">
             View More
@@ -22,7 +22,7 @@ const Blog = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 mt-5 md:0 gap-5 md:gap-0 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 mt-5 md:mt-0 px-5 gap-5 md:gap-0 items-center">
         <div className="space-y-2">
           <h2 className="font-display text-3xl text-center">Recipes</h2>
           <h3 className="font-display text-5xl text-center">
