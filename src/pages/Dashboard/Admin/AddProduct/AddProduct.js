@@ -24,7 +24,7 @@ const AddProduct = () => {
   const onSubmit = (data) => {
     setIsLoading(true);
     axios
-      .post('http://localhost:5000/products', data)
+      .post('https://glacial-caverns-54982.herokuapp.com/products', data)
       .then((res) => {
         console.log(res);
         if (res.data.acknowledged === true) {

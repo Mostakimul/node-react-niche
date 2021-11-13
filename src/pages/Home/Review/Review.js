@@ -8,7 +8,7 @@ const Review = () => {
   // fecth reviews
   useEffect(() => {
     axios
-      .get('http://localhost:5000/reviews')
+      .get('https://glacial-caverns-54982.herokuapp.com/reviews')
       .then((res) => {
         setReviews(res.data);
       })

@@ -7,7 +7,7 @@ const ManageSingle = ({ allOrder, index, handleModal, changeStatus }) => {
   // fetch product
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/products/${productId}`)
+      .get(`https://glacial-caverns-54982.herokuapp.com/products/${productId}`)
       .then((res) => {
         if (res.data) {
           let orderData = res.data;

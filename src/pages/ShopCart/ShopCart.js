@@ -30,7 +30,7 @@ const ShopCart = () => {
   useEffect(() => {
     setIsLoading(false);
     axios
-      .get(`http://localhost:5000/products/${id}`)
+      .get(`https://glacial-caverns-54982.herokuapp.com/products/${id}`)
       .then((res) => {
         setProduct(res.data);
       })
@@ -56,7 +56,7 @@ const ShopCart = () => {
 
     setIsLoading(true);
     axios
-      .post('http://localhost:5000/order', data)
+      .post('https://glacial-caverns-54982.herokuapp.com/order', data)
       .then((res) => {
         if (res.data.acknowledged === true) {
           setIsLoading(false);

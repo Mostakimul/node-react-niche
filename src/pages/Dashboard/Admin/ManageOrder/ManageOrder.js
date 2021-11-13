@@ -22,7 +22,7 @@ const ManageOrder = () => {
   useEffect(() => {
     setIsLoading(true);
     axios
-      .get('http://localhost:5000/orders')
+      .get('https://glacial-caverns-54982.herokuapp.com/orders')
       .then((res) => {
         setAllOrders(res.data);
         setIsLoading(false);
@@ -48,7 +48,7 @@ const ManageOrder = () => {
   const deleteProduct = (ordId) => {
     setIsLoading(true);
     axios
-      .delete(`http://localhost:5000/orders/${ordId}`)
+      .delete(`https://glacial-caverns-54982.herokuapp.com/orders/${ordId}`)
       .then((res) => {
         if (res.data.deletedCount === 1) {
           setIsSuccess(true);
@@ -69,7 +69,10 @@ const ManageOrder = () => {
   const changeStatus = (ordId) => {
     let data = { status: 'shipped' };
     axios
-      .put(`http://localhost:5000/ordersStatus/${ordId}`, data)
+      .put(
+        `https://glacial-caverns-54982.herokuapp.com/ordersStatus/${ordId}`,
+        data
+      )
       .then((res) => {
         if (res.data) {
           setDeleteStatus(!deleteStatus);

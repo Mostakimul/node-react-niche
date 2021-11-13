@@ -16,7 +16,7 @@ const ReviewBody = ({ rev }) => {
   // Fethcing single user
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/singleUser/${email}`)
+      .get(`https://glacial-caverns-54982.herokuapp.com/singleUser/${email}`)
       .then((res) => {
         setUser(res.data);
       })

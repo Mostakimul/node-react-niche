@@ -25,7 +25,7 @@ const MakeAdmin = () => {
   const onSubmit = (data) => {
     setIsLoading(true);
     axios
-      .put('http://localhost:5000/addAdmin', data, {
+      .put('https://glacial-caverns-54982.herokuapp.com/addAdmin', data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

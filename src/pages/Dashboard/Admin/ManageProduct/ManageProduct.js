@@ -18,7 +18,7 @@ const ManageProduct = () => {
   useEffect(() => {
     setIsLoading(true);
     axios
-      .get('http://localhost:5000/products')
+      .get('https://glacial-caverns-54982.herokuapp.com/products')
       .then((res) => {
         // console.log(res.data);
         setProducts(res.data);
@@ -50,7 +50,7 @@ const ManageProduct = () => {
   const deleteProduct = (pdId) => {
     setIsLoading(true);
     axios
-      .delete(`http://localhost:5000/products/${pdId}`)
+      .delete(`https://glacial-caverns-54982.herokuapp.com/products/${pdId}`)
       .then((res) => {
         if (res.data.deletedCount === 1) {
           setIsSuccess(true);

@@ -11,7 +11,7 @@ const Products = () => {
   useEffect(() => {
     setIsLoading(true);
     axios
-      .get('http://localhost:5000/productsHome')
+      .get('https://glacial-caverns-54982.herokuapp.com/productsHome')
       .then((res) => {
         setProducts(res.data);
         setIsLoading(false);

@@ -92,7 +92,7 @@ const useFirebase = () => {
   const saveToMongo = (email, displayName) => {
     const mongoUser = { email, displayName };
     axios
-      .post('http://localhost:5000/users', mongoUser)
+      .post('https://glacial-caverns-54982.herokuapp.com/users', mongoUser)
       .then((res) => {
         // console.log(res);
       })
@@ -104,7 +104,7 @@ const useFirebase = () => {
   const saveToMongoGoogle = (email, displayName) => {
     const mongoUser = { email, displayName };
     axios
-      .put('http://localhost:5000/users', mongoUser)
+      .put('https://glacial-caverns-54982.herokuapp.com/users', mongoUser)
       .then((res) => {
         console.log(res);
       })
@@ -116,7 +116,7 @@ const useFirebase = () => {
   // check admin or not
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/users/${user.email}`)
+      .get(`https://glacial-caverns-54982.herokuapp.com/users/${user.email}`)
       .then((res) => {
         setAdmin(res.data.admin);
       })

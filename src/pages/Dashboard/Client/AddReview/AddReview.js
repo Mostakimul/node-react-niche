@@ -28,7 +28,7 @@ const AddReview = () => {
     setIsLoading(true);
     data.email = user.email;
     axios
-      .post('http://localhost:5000/reviews', data)
+      .post('https://glacial-caverns-54982.herokuapp.com/reviews', data)
       .then((res) => {
         if (res.data.acknowledged === true) {
           setIsSuccess(true);
