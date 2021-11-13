@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SingleProduct = ({ product }) => {
   const { name, image, price, quantity } = product;
+
   return (
     <div className="bg-red-50 md:m-10 rounded-sm shadow transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 ">
       <div>
@@ -15,9 +17,11 @@ const SingleProduct = ({ product }) => {
         </div>
       </div>
       <div className="m-2">
-        <button className="font-display text-lg bg-green-500 hover:bggren block w-full rounded shadow">
-          Buy Now
-        </button>
+        <Link to={`/product/${product._id}`}>
+          <button className="font-display text-lg bg-green-500 hover:bggren block w-full rounded shadow">
+            Buy Now
+          </button>
+        </Link>
       </div>
     </div>
   );

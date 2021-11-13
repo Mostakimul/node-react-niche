@@ -10,6 +10,7 @@ import Home from './pages/Home/Home/Home';
 import Login from './pages/Login/Login';
 import Pricing from './pages/Pricing/Pricing/Pricing';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
+import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Register from './pages/Register/Register';
 import Shop from './pages/Shop/Shop';
 
@@ -18,6 +19,9 @@ function App() {
     <AuthProvider>
       <Router>
         <Switch>
+          <Route path="/product/:id">
+            <ProductDetails />
+          </Route>
           <Route exact path="/pricing">
             <Pricing />
           </Route>
