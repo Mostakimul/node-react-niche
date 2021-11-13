@@ -17,16 +17,16 @@ const MyOrders = () => {
   const [productId, setProductId] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
   const [deleteStatus, setDeleteStatus] = useState(false);
-  const [status, setStatus] = useState(false);
 
   // Close Success
   const closeSuccess = () => {
     setIsSuccess(false);
   };
   // show modal
-  const handleModal = (productId) => {
-    setProductId(productId);
+  const handleModal = (orderId) => {
+    setProductId(orderId);
     setShowModal(true);
+    // console.log(ordId);
   };
   // close modal
   const closeModal = () => {
@@ -41,7 +41,6 @@ const MyOrders = () => {
       .then((res) => {
         setOrders(res.data);
         setIsLoading(false);
-        setStatus(!status);
       })
       .catch((err) => {
         console.log(err);
@@ -51,10 +50,11 @@ const MyOrders = () => {
       });
   }, [deleteStatus]);
 
-  const deleteProduct = (pdId) => {
+  // delete order
+  const deleteProduct = (ordId) => {
     setIsLoading(true);
     axios
-      .delete(`http://localhost:5000/products/${pdId}`)
+      .delete(`http://localhost:5000/orders/${ordId}`)
       .then((res) => {
         if (res.data.deletedCount === 1) {
           setIsSuccess(true);
