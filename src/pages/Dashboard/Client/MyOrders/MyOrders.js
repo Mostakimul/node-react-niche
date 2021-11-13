@@ -86,7 +86,7 @@ const MyOrders = () => {
           {isSuccess && (
             <div className="w-full md:w-4/5 mx-auto my-4">
               <SuccessAlert
-                message="Product Deleted Successfully!!!"
+                message="Order Deleted Successfully!!!"
                 closeSuccess={closeSuccess}
               ></SuccessAlert>
             </div>

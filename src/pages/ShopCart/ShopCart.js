@@ -83,7 +83,7 @@ const ShopCart = () => {
         {isSuccess && (
           <div className="w-full md:w-2/4 md:mx-auto py-5">
             <SuccessAlert
-              message="User added as admin success!!!"
+              message="Product Purchased successfully !!!"
               closeSuccess={closeSuccess}
             ></SuccessAlert>
           </div>
