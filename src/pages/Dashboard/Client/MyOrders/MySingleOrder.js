@@ -32,7 +32,7 @@ const MySingleOrder = ({ index, order, handleModal }) => {
       <td className="border border-green-600 ">
         <span
           className={`${
-            product.status ? 'bg-red-400' : 'bg-blue-400'
+            product.status === 'pending' ? 'bg-red-400' : 'bg-blue-400'
           } rounded py-1 px-2 p-2`}
         >
           {product.status}
