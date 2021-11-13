@@ -8,7 +8,6 @@ import Error from './pages/Error/Error';
 import FaqPage from './pages/FaqPage/FaqPage/FaqPage';
 import Home from './pages/Home/Home/Home';
 import Login from './pages/Login/Login';
-import Pricing from './pages/Pricing/Pricing/Pricing';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Register from './pages/Register/Register';
@@ -26,9 +25,6 @@ function App() {
           <PrivateRoute path="/cart/:id">
             <ShopCart />
           </PrivateRoute>
-          <Route exact path="/pricing">
-            <Pricing />
-          </Route>
           <Route exact path="/contact">
             <Contact />
           </Route>

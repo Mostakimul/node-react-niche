@@ -21,9 +21,6 @@ const DropDown = ({ isOpen, toggle }) => {
       <Link className="nav-link" to="/about">
         About
       </Link>
-      <Link className="nav-link" to="/pricing">
-        Pricing
-      </Link>
       <Link className="nav-link" to="/contact">
         Contact
       </Link>
